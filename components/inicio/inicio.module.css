@@ -1,0 +1,49 @@
+.overlay_main{
+  content: "";
+  position: absolute;
+  top: 0;
+  right: -100rem;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  clip-path: circle(50% at 50% 50%);
+  background: #000046;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #1CB5E0, #000046);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #1CB5E0, #000046); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  opacity: 0.3;
+}
+
+@media only screen and (min-width: 56.25em) {
+    .overlay_main{
+    right: -50rem;
+  }
+  
+} /* 900px */
+
+.title{
+  color: var(--blue);
+  font-weight: bold;
+  font-size: 10rem;
+  align-self: flex-start;
+  z-index: 99999;
+  width: 100%;
+  text-transform: uppercase;
+}
+
+.paragraph{
+  color: var(--black);
+  align-self: flex-start;
+  width: 100%;
+  font-size: 2.5rem;
+}
+
+@media only screen and (min-width: 56.25em) {
+  .paragraph{
+    width: 50%; 
+  }
+
+  .title{
+    width: 45%;
+  }
+
+} /* 900px */
