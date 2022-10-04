@@ -19,27 +19,6 @@
   box-sizing: inherit;
 }
 
-
-@keyframes moveInBottom {
-  0% {
-    opacity: 0;
-    transform: translateY(3rem);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes moveInLeft {
-  0% {
-    transform: translateX(-30rem);
-  }
-  100% {
-    transform: translateX(0);
-  }
-}
-
 html {
   font-size: 62.5%; /* 1 rem = 10px; 10px/16px = 62.5% */
   font-family: 'Roboto', sans-serif;
@@ -77,6 +56,8 @@ body {
   letter-spacing: 0.2rem;
   background: white;
 }
+
+
 
 a{
   text-decoration: none;

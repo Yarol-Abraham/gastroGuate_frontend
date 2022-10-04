@@ -6,7 +6,7 @@
   width: 100%;
   text-transform: uppercase;
   font-weight: 700;
-  animation: 2s moveInBottom;
+  animation: 4s moveInBottom;
 }
 
 .paragraph{
@@ -15,7 +15,7 @@
   font-size: 2rem;
   margin-bottom: 0.5rem;
   font-weight: 300;
-  animation: 2s moveInBottom;
+  animation: 4s moveInBottom;
 }
 
 @media only screen and (min-width: 56.25em) {
@@ -92,7 +92,7 @@
 @-webkit-keyframes moveInBottom {
   0% {
     opacity: 0;
-    transform: translateY(30px);
+    transform: translateY(100px);
   }
   100% {
     opacity: 1;
@@ -103,7 +103,7 @@
 @keyframes moveInBottom {
   0% {
     opacity: 0;
-    transform: translateY(30px);
+    transform: translateY(100px);
   }
   100% {
     opacity: 1;
