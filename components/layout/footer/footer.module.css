@@ -1,0 +1,7 @@
+.footer{
+    background: var(--blue);
+    padding: 5rem;
+    color: var(--white);
+    text-align: center;
+    text-transform: uppercase;
+}

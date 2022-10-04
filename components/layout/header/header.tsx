@@ -26,7 +26,6 @@ const Header: NextPage = () => {
       <div className={styles.icons}>
           <i className={`fas fa-bars ${styles.menu_bars}`} onClick={() => setmenu(!_menu)}></i>
           <i className="fas fa-search" id="search-icon"></i>
-          {/* <a href="#" className="fas fa-shopping-cart"></a> */}
           <a href="#" className="fas fa-user"></a>
       </div>
 

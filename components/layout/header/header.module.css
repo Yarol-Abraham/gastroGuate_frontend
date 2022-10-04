@@ -92,7 +92,6 @@
     font-size: 1.7rem;
     color:var(--black);
     border-radius: 50%;
-    background: #eee;
 }
 
 .header .icons i:hover,
@@ -100,6 +99,7 @@
     color:#fff;
     background: var(--blue);
     transform: rotate(360deg);
+    transition: 250ms all ease-in;
 }
 
 .header .icons .menu_bars{
