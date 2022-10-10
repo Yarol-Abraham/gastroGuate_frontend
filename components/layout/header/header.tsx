@@ -1,6 +1,7 @@
 import type { NextPage } from 'next'
 import { useState } from 'react';
 import styles from './header.module.css';
+import Shoping from './shoping/shoping';
 
 /*
 _ = indica que es una variable (solo aplica si ya existe otra variable o funcion con el nombre deseado)
@@ -9,6 +10,9 @@ _ = indica que es una variable (solo aplica si ya existe otra variable o funcion
 const Header: NextPage = () => {
 
   const [ _menu, setmenu ] = useState(false)
+  const [ shoping, setShoping ] = useState(false);
+
+  const handleShoping = ()=> setShoping(!shoping);  
 
   return (
     <>
@@ -24,9 +28,11 @@ const Header: NextPage = () => {
       </nav>
 
       <div className={styles.icons}>
-          <i className={`fas fa-bars ${styles.menu_bars}`} onClick={() => setmenu(!_menu)}></i>
-          <i className="fas fa-search" id="search-icon"></i>
+          <i className={`${styles.i} fas fa-bars ${styles.menu_bars}`} onClick={() => setmenu(!_menu)}></i>
+          {/* <i className="fas fa-search" id="search-icon"></i> */}
+          <a href="#" className="fas fa-shopping-cart" onClick={handleShoping}></a>
           <a href="#" className="fas fa-user"></a>
+          <Shoping shoping={shoping} handleShoping={handleShoping} />
       </div>
 
     </header> 
