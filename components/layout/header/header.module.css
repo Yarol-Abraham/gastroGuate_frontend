@@ -44,7 +44,7 @@
 }
 
 .header .navbar a:hover {
-    color: var(--white);
+    color: var(--white-light);
 }
 
 .header .navbar a::before {

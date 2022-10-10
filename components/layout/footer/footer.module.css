@@ -1,7 +1,7 @@
 .footer{
     background: var(--blue);
     padding: 5rem;
-    color: var(--white);
+    color: var(--white-light);
     text-align: center;
     text-transform: uppercase;
 }

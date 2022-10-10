@@ -8,7 +8,7 @@ const Loading: NextPage = () =>
     
     useEffect(()=>{
 
-        setTimeout(()=> setHidden(false),2000)
+        setTimeout(()=> setHidden(false),4000)
 
     },[])
 

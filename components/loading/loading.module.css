@@ -9,15 +9,22 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
 }
+
 .loading_img{
+    margin-top: 20rem;
     width: 30%;
-    height: 30%;
-    background: url(/image/loading.gif) center center;
+    height: 10%;
+    background: url(/image/loader.gif) center center;
     background-size: cover;
     object-fit: fill;
 }
+
+@media only screen and (min-width: 56.25em) {
+    .loading_img{
+        width: 15%;
+    }
+} /* 900px */
 
 .loading.hidden
 {

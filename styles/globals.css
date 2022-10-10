@@ -4,7 +4,7 @@
   --green:#27ae60;
   --black:#192a56;
   --blue:rgb(11, 102, 222);
-  --light-color:#666;
+  --light-color:rgb(252, 252, 252);
   --white:#e6e6e6;
   --white-light:#fff;
   --box-shadow:0 .5rem 1.5rem rgba(0,0,0,.1);
@@ -25,6 +25,7 @@ html {
   overflow-x: hidden;
   scroll-padding-top: 5.5rem;
   scroll-behavior: smooth;
+  position: relative;
 }
 
 /*
@@ -56,8 +57,6 @@ body {
   letter-spacing: 0.2rem;
   background: white;
 }
-
-
 
 a{
   text-decoration: none;
@@ -101,3 +100,6 @@ a{
 .container {
   padding: 2rem;
 }
+
+/**/
+
