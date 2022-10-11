@@ -142,7 +142,7 @@
     }
 
     .header .navbar .a:hover {
-        color: #e6e6e6;
+        color: var(--white);
         background-color: var(--blue);
       }
 

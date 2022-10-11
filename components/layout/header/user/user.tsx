@@ -12,7 +12,7 @@ const User: NextPage  = function ()
             <Link href="/">
                 <a className={styles.a}>Cerrar Sesión</a>
             </Link>
-            <Link href="/">
+            <Link href="/login">
                 <a className={styles.a}>Login</a>
             </Link>   
         </div>

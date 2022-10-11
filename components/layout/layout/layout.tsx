@@ -14,7 +14,7 @@ const Laoyut: NextPage<Props> = ({ children }) => {
   return (
     <>
        <Head>
-        <title>GastroGuate</title>
+        <title>GastroGuate | Home</title>
       </Head>
       <Script src="https://kit.fontawesome.com/6dba117ff9.js" />
       <Header />
