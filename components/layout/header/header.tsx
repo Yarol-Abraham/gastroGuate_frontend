@@ -1,7 +1,7 @@
 import type { NextPage } from 'next'
 import { useState } from 'react';
 import styles from './header.module.css';
-import Shoping from './shoping/shoping';
+import Shopping from './shoping/shopping';
 
 /*
 _ = indica que es una variable (solo aplica si ya existe otra variable o funcion con el nombre deseado)
@@ -29,10 +29,9 @@ const Header: NextPage = () => {
 
       <div className={styles.icons}>
           <i className={`${styles.i} fas fa-bars ${styles.menu_bars}`} onClick={() => setmenu(!_menu)}></i>
-          {/* <i className="fas fa-search" id="search-icon"></i> */}
           <a href="#" className="fas fa-shopping-cart" onClick={handleShoping}></a>
           <a href="#" className="fas fa-user"></a>
-          <Shoping shoping={shoping} handleShoping={handleShoping} />
+          <Shopping shoping={shoping} handleShoping={handleShoping} />
       </div>
 
     </header> 
