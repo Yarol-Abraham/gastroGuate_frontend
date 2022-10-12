@@ -1,12 +1,12 @@
 import { NextPage } from "next";
-import styles from './login.module.css';
+import styles from '../autenticacion.module.css';
 import Link from "next/link";
 
 const LoginComponent: NextPage = function () 
 {
     return (
         <main className={styles.main}>
-            <div className={`container ${styles.container_login}`}>
+            <div className={`container ${styles.container_login} ${styles.container_body}`}>
                 <h1 className={styles.title}>Bienvenido a GastroGuate</h1>
                 <p className={styles.paragraph}>Ingresa tus credenciales para continuar.</p>
                 <div className={styles.container_content}>
@@ -28,7 +28,7 @@ const LoginComponent: NextPage = function ()
                            />
                         </div>
                         <button type="submit" className={`custom_btn_2  ${styles.btn_color_login}`}>Iniciar Sesión</button>
-                        <Link href="/">
+                        <Link href="/register">
                             <a className={styles.link}>No tienes cuenta?, crea una</a>
                         </Link>
                    </form>
