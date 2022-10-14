@@ -3,7 +3,7 @@ import Head from "next/head";
 import RegisterComponent from "../components/autenticacion/registrar/registerComponent";
 
 
-const Login: NextPage = () => {
+const Register: NextPage = () => {
 
     return (
         <>
@@ -15,4 +15,4 @@ const Login: NextPage = () => {
     )
 }
 
-export default Login;
+export default Register;

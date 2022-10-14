@@ -3,10 +3,7 @@ import { useState } from 'react';
 import styles from './header.module.css';
 import Shopping from './shoping/shopping';
 import User from './user/user';
-
-/*
-_ = indica que es una variable (solo aplica si ya existe otra variable o funcion con el nombre deseado)
-*/
+import Link from 'next/link';
 
 const Header: NextPage = () => {
 
@@ -20,11 +17,17 @@ const Header: NextPage = () => {
   return (
     <>
     <header className={styles.header}>
-      <a href="#" className={styles.logo}><i className="fas fa-utensils"></i>GastroGuate.</a>
+      <Link href={"/"}> 
+        <a className={styles.logo}><i className="fas fa-utensils"></i>GastroGuate.</a>
+      </Link>
 
       <nav className={`${styles.navbar} ${_menu ? styles.active : ''} `}>
-          <a className={`${styles.a} ${styles.active}`} href="#home">Inicio</a>
-          <a href="#" className={styles.a}>Menu</a>
+          <Link href={"/"}>
+            <a className={`${styles.a} ${styles.active}`}>Inicio</a>
+          </Link>
+          <Link href={"/menu"}>
+            <a className={styles.a}>Menu</a>
+          </Link>
           <a href="#dishes" className={styles.a}>Regiones</a>
           <a href="#about" className={styles.a}>Ofertas</a>
           <a href="#menu" className={styles.a}>Vendedores</a>
