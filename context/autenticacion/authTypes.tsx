@@ -1,0 +1,9 @@
+export const AUTH_USER = 'AUTH_USER';
+export const CLEAR_USER = 'CLEAR_USER';
+
+export type Action =
+    | { type: 'AUTH_USER'; payload: {
+        user: Object,
+        tokenUser: string
+    } }
+    | { type: 'CLEAR_USER' };
