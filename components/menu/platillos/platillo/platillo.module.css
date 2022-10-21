@@ -73,7 +73,7 @@
 
   .blog_slider__content {
     position: absolute;
-    padding-right: 25px;
+    padding-right: 30px;
     width: 20rem;
     right: 0;
   }
@@ -88,7 +88,7 @@
     .blog_slider__content {
       margin-top: -80px;
       text-align: center;
-      padding: 0 30px;
+      padding: 5px 30px;
       bottom: 0;
       right: 0;
       width: 100%;
@@ -96,7 +96,7 @@
   }
   @media screen and (max-width: 576px) {
     .blog_slider__content {
-      padding: 0;
+      padding: 10px 0px;
       bottom: 0;
       width: 100%;
       right: 0;
@@ -108,7 +108,7 @@
     font-size: 1.3rem;
     font-weight: 700;
     color:var(--black);
-    margin-bottom: 20px;
+    margin-bottom: 10px;
   }
 
   .blog_slider__text {

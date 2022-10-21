@@ -36,7 +36,7 @@ function CategoriasState(props: props)
         }
     }
 
-    useEffect(()=>{
+    useEffect(()=>{ 
         getCategorias();
     }, [])
 
