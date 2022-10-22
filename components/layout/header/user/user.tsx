@@ -10,12 +10,11 @@ const User: NextPage  = function ()
     const router = useRouter();
     const _AuthContext = useContext(AuthContext);
 
-    const handleCerrarSesion = function () { _AuthContext?.cerrarSesion(); }
-
-    useEffect(()=> {
-        if(_AuthContext?.tokenUser == "") router.push("/");
-        // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [_AuthContext?.tokenUser])
+    const handleCerrarSesion = function () 
+    { 
+        _AuthContext?.cerrarSesion();
+        router.push("/");
+     }
 
     return (
         <div className={styles.container_user}>
