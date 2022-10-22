@@ -1,7 +1,7 @@
 import { ReactElement, useEffect, useReducer } from "react";
 
 import {
-    AUTH_USER, CLEAR_USER
+    AUTH_USER, CLEAR_USER, MESSAGE_AUTH
 } from './authTypes'
 
 import {
@@ -28,12 +28,19 @@ function AuthState(props: props)
        try {
         
         const response = await requestAxios.post("/login", data);
-        
-        if(Object.keys(response.data).length > 0)
+   
+        if(Object.keys(response.data.data).length > 0)
         {
-            localStorage.setItem("user", response.data.data);
+            localStorage.setItem("user", JSON.stringify(response.data.data));
             localStorage.setItem("token", response.data.token);
             obtenerUsuarioAuth();
+        }
+        else
+        {
+            dispatch({ 
+                type: MESSAGE_AUTH, 
+                payload: { message: response.data.message } 
+            });  
         }
 
        } catch (error) {
@@ -54,6 +61,9 @@ function AuthState(props: props)
        })
     }    
 
+    // CERRAR SESION
+    function cerrarSesion() { dispatch({ type: CLEAR_USER }); }
+
     useEffect(()=>{
         obtenerUsuarioAuth();
     }, [])
@@ -63,9 +73,11 @@ function AuthState(props: props)
             value={{
                 user: state.user,
                 status: state.status,
+                message: state.message,
                 tokenUser: state.tokenUser,
                 obtenerUsuarioAuth,
-                login
+                login,
+                cerrarSesion
             }}
         >
         {props.children}

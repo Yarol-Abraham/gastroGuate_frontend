@@ -13,7 +13,7 @@ const MenuComponent: NextPage = function ()
 
             <div className={styles.main_content} >
                 <div className={styles.main_content_buscador}>
-                    buscador
+                    {/* buscador */}
                 </div>
                 <div className={styles.main_content_platillos}>
                     <Platillos />

@@ -36,7 +36,7 @@
 .main_content{
   display: flex;
   flex-direction: column;
-  height: 100%;
+  height: auto;
   overflow-y: auto;
 }
 
