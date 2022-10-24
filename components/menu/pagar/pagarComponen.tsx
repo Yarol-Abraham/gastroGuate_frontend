@@ -40,7 +40,7 @@ const PagarComponent: NextPage  = function ()
                 el.descripcion = data.descripcion;
                 el.ubicacion = data.ubicacion;
             })
-            _PedidosContext?.realizarPedido(pedidos, _AuthContext?.tokenUser);
+            _PedidosContext?.realizarPedido(pedidos, _AuthContext?.tokenUser || "");
         }
 
     }
