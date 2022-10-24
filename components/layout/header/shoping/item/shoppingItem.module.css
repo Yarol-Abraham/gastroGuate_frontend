@@ -22,6 +22,8 @@
     width: 17rem;
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .shoping_content h4{
@@ -30,6 +32,8 @@
 
 .shoping_content p{
     color: var(--green);
+    font-size: 1.2rem;
+    font-weight: bold;
 }
 
 .shoping_icons{
@@ -46,4 +50,21 @@
     color: var(--white-light);
     padding: .5rem;
     border-radius: 0.2rem;
+}
+
+.shoping_content_quantity{
+    padding: 0.5rem;
+    width: 13rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.shopping_content_input{
+    text-align: center;
+}
+
+.shoping_button_color
+{
+    background-color: var(--blue);
 }

@@ -28,9 +28,6 @@ const Header: NextPage = () => {
           <Link href={"/menu"}>
             <a className={styles.a}>Menu</a>
           </Link>
-          <a href="#dishes" className={styles.a}>Departamentos</a>
-          {/* <a href="#about" className={styles.a}>Ofertas</a> */}
-          <a href="#menu" className={styles.a}>Vendedores</a>
       </nav>
 
       <div className={styles.icons}>

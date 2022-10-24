@@ -24,18 +24,29 @@ const Platillo: NextPage<PropsPlatillo> = function ({ platillo })
   const _PedidosContext = useContext(PedidosContext);
 
   const addPlatillo = function (platillo:any) { 
-    console.log(platillo)
-    _PedidosContext?.addPedido({
+    
+    let buscarPedido = _PedidosContext?.pedidos.filter(el => el.id_platillo == platillo.id) || [];
+    let _pedido = {
       descripcion: platillo.descripcion,
-      cantidad: 0,
-      total: 0,
+      cantidad: 1,
+      total: platillo.precio * 1,
       ubicacion: "SIN UBICACION",
       id_usuario: 0,
       id_platillo: platillo.id,
       precio_platillo: platillo.precio,
       cantidad_platillo: platillo.stock,
       image_url: platillo.image_url
-    });
+    }
+
+    if(buscarPedido?.length > 0)
+    {
+      _PedidosContext?.updatePedido(_pedido);
+    }
+    else
+    {
+      _PedidosContext?.addPedido(_pedido);
+    }
+   
   }
 
   const { image_url, descripcion, stock, precio } = platillo;

@@ -31,6 +31,7 @@ const LoginComponent: NextPage = function ()
 
     useEffect(()=> {
         if(_AuthContext?.tokenUser != "" ) router.push("/menu")
+        _AuthContext?.clearRegister();
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [_AuthContext?.tokenUser, _AuthContext?.user])
 
@@ -40,7 +41,10 @@ const LoginComponent: NextPage = function ()
                 <h1 className={styles.title}>Bienvenido a GastroGuate</h1>
                 <p className={styles.paragraph}>Ingresa tus credenciales para continuar.</p>
                 <div className={styles.container_content}>
-                   <form className={styles.form}>
+                   <form 
+                        className={styles.form}
+                        onSubmit={(e)=> handleLogin(e)}
+                    >
                        {
                         _AuthContext?.message != "" ?
                             <div className="alert alert-danger">
@@ -71,7 +75,6 @@ const LoginComponent: NextPage = function ()
                         <button 
                             type="submit"
                             className={`custom_btn_2  ${styles.btn_color_login}`}
-                            onClick={(e)=> handleLogin(e)}    
                         >Iniciar Sesión</button>
                         <Link href="/register">
                             <a className={styles.link}>No tienes cuenta?, crea una</a>

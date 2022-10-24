@@ -1,11 +1,13 @@
 import { ReactElement, useEffect, useReducer } from "react";
 
 import {
-    AUTH_USER, CLEAR_USER, MESSAGE_AUTH
+    AUTH_USER, REGISTER_USER, CLEAR_USER, MESSAGE_AUTH
 } from './authTypes'
 
 import {
-    Login
+    Login,
+    Registrar,
+    User
 } from './authInterface';
 
 import requestAxios from "../../helpers/axios";
@@ -21,6 +23,33 @@ function AuthState(props: props)
 {
 
     const [state, dispatch] = useReducer(AuthReducer, initialState);
+
+    // REGISTRAR USUARIO
+    async function register(data: Registrar) 
+    {
+       try {
+        
+        const response = await requestAxios.post("/usuarios", data);
+        
+        if(Object.keys(response.data.data).length > 0)
+        {
+            dispatch({
+                type: REGISTER_USER,
+                payload: { status: true }
+            })
+        }
+        
+       } catch (error) { dispatch({ type: CLEAR_USER }); }     
+    } 
+
+    // CLEAR STATUS
+    function clearRegister() 
+    {
+        dispatch({
+            type: REGISTER_USER,
+            payload: { status: false }
+        })
+    }
 
     // LOGIN DE USUARIO
     async function login(data: Login) 
@@ -52,10 +81,21 @@ function AuthState(props: props)
     // OBTENER LOS DATOS DE LA SESION
     function obtenerUsuarioAuth() 
     {
+        let _user: User = JSON.parse(localStorage.getItem('user')?.toString() || `{
+            "id": 0,
+            "nombre": "",
+            "apellido": "",
+            "usuario": "",
+            "identificacion": "",
+            "idTipoUsuario": 0,
+            "idMunicipio": 0,
+            "correo": ""
+        }
+        `);
        dispatch({
         type: AUTH_USER,
         payload: {
-            user: JSON.parse(localStorage.getItem('user')?.toString() || '{}'),
+            user: _user,
             tokenUser: localStorage.getItem('token')?.toString() || ''
         }
        })
@@ -77,6 +117,8 @@ function AuthState(props: props)
                 tokenUser: state.tokenUser,
                 obtenerUsuarioAuth,
                 login,
+                register,
+                clearRegister,
                 cerrarSesion
             }}
         >

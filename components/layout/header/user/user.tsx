@@ -21,9 +21,6 @@ const User: NextPage  = function ()
            {
             _AuthContext?.tokenUser != "" ? (
                 <>
-                 <Link href="/">
-                    <a className={styles.a}>Mi perfil</a>
-                </Link>
                 <a onClick={handleCerrarSesion} href="#" className={styles.a}>Cerrar Sesión</a>
                 </>
             ) :   <Link href="/login">

@@ -154,7 +154,6 @@ ul{
 }
 
 /* button 2 */
-
 .custom_btn_2 {
   cursor: pointer;
   display: inline-block;
@@ -188,4 +187,9 @@ ul{
 .alert-danger{
   color: var(--white-light);
   background-color: var(--red);
+}
+
+.alert-success{
+  color: var(--white-light);
+  background-color: var(--green);
 }

@@ -1,10 +1,11 @@
 import { NextPage } from "next";
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import styles from './shopping.module.css';
 import ShoppingItem from './item/shoppingItem'
 import AuthContext from '../../../../context/autenticacion/authContext';
 import PedidosContext from '../../../../context/pedidos/pedidosContext';
 import { v4 } from "uuid";
+import { useRouter } from 'next/router';
 
 interface Props {
     shoping: boolean,
@@ -15,6 +16,7 @@ const Shopping: NextPage<Props> = function ({ shoping, handleShoping })
 {
     const _AuthContext = useContext(AuthContext);
     const _PedidosContext = useContext(PedidosContext);
+    const router = useRouter();
 
     const handleShopingClick = function () 
     {
@@ -32,23 +34,14 @@ const Shopping: NextPage<Props> = function ({ shoping, handleShoping })
             
         }
 
-        console.log("pasar a la siguiente etapa del pago")
-
+        router.push("/pagar");
 
     }
 
-    //TODO: AGREGAR CANTIDAD A CADA ITEM Y REALIZAR LOGIN DE USUARIO
-
-    /*
-
-        TAREAS PENDIENTES:
-            TERMINAR EL PROCESO DE COMPRA
-            TERMINAR EL PROCESO DE REGISTRO DE USUARIO
-            DASHBOARD PARA VER LOS PEDIDOS ENVIADOS - COMPRA
-            DASHBOARD PARA VER LOS PEDIDOS RECIBIDOS - CREAR PEDIDO - VENDE
-            CERRAR SESION
-    */
-
+    useEffect(()=> {
+        _PedidosContext?.totalPlatillos();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [_PedidosContext?.pedidos])
 
     return(
         <div className={`${styles.shoping_bg} ${shoping ? '' : styles.hidden}`}>
@@ -77,6 +70,10 @@ const Shopping: NextPage<Props> = function ({ shoping, handleShoping })
                     ))
                 }
                 <div className={styles.shopping_footer}>
+                   <div className={styles.shopping_footer_content}>
+                    <p className={styles.shopping_footer_content_paragraph} >Total a cancelar</p>
+                    <p className={styles.shopping_footer_content_paragraph} >Q {_PedidosContext?.total}</p>
+                   </div>
                    <button onClick={handleShopingClick} className={`custom_btn_2  ${styles.btn_color_shopping}`}>Procesar Compra</button>
                 </div>
             </div>
