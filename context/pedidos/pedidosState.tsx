@@ -46,7 +46,7 @@ function PedidosState(props: Props)
         dispatch({
             type:CLEAR_MESSAGE
         })  
-      }, 3000)
+      }, 1000)
     }
 
     // ELIMINAR UN PEDIDO

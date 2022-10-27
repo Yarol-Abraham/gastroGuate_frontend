@@ -17,7 +17,18 @@ const ShoppingItem: NextPage<pedido> = function (pedido: pedido)
 
     const handleMinusPlatillo = function () 
     { 
-        if(quantity > 1) setQuantity(quantity - 1); 
+        if(quantity > 1) 
+        {
+            setQuantity(quantity - 1); 
+            let buscarPedido = _PedidosContext?.pedidos.filter(el => el.id_platillo == id_platillo) || [];
+            if(buscarPedido.length > 0)
+            {
+                let pedido = buscarPedido[0];
+                pedido.cantidad = quantity - 1;
+                pedido.total = pedido.cantidad * pedido.precio_platillo;
+                _PedidosContext?.updateDataPedido(pedido);
+            }
+        }
     }
 
     const handlePlusPlatillo = function ()

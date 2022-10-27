@@ -49,6 +49,11 @@ const RegisterComponent: NextPage = function ()
         
     }
 
+    const handleChangeDepartamentos = function (e: any) 
+    {
+        _RegionesContext?.getMunicipios(Number(e.target.value));
+    }
+
     useEffect(()=>{
         if(_AuthContext?.status) router.push("/login");
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -144,10 +149,16 @@ const RegisterComponent: NextPage = function ()
                             </div>
                             <div  className={styles.form_item}>
                                 <label htmlFor="usuario">Departamento</label>
-                                <select className={styles.form_item_select}>
+                                <select 
+                                    className={styles.form_item_select}
+                                    onChange={(e)=> handleChangeDepartamentos(e)}
+                                >
                                     {
                                         _RegionesContext?.departamentos.map(el => (
-                                            <option key={el.id} value={el.id}>{el.nombre}</option>    
+                                            <option 
+                                                key={el.id} 
+                                                value={el.id}
+                                            >{el.nombre}</option>    
                                         ))
                                     }
                                 </select>
