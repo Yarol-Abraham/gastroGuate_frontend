@@ -1,0 +1,25 @@
+.container_user{
+    position: absolute;
+    top: 5rem;
+    background-color: var(--light-color);
+    width: 16rem;
+    display: flex;
+    flex-direction: column;
+    border-radius: 0.5rem;
+    box-shadow: 0 0 0.2rem var(--black);
+}
+
+.container_user .a{
+    width: 100%;
+    padding: 1rem;
+    color: var(--black);
+    font-weight: 500;
+    font-size: 1.4rem;
+    transition: 250ms all ease-in;
+}
+
+.container_user .a:hover
+{
+    background: var(--blue);
+    color: var(--white-light);
+}

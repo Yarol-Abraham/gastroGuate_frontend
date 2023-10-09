@@ -1,0 +1,16 @@
+.li{
+    cursor: pointer;
+    padding: 2rem;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--black);
+    transition: 100ms all ease;
+}
+
+.li:hover{
+    background: var(--green);
+    color: var(--white-light);
+    border-bottom: 1px solid var(--green);
+}
